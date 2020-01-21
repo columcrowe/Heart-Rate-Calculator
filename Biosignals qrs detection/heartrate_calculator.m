@@ -1,6 +1,7 @@
 function bpm = heartrate_calculator(ecgsignal,fs)
 % Outputs heartrate (bpm) calculated at each heart beat in the ECG signal
 % Requires input sampling rate of signal fs (Hz)
+% MATLAB Version 2017b
 
 % ECG signal
 unfiltered_ecgsignal = ecgsignal;
@@ -16,7 +17,7 @@ ecgsignal = sgolayfilt(ecgsignal, 0, 7); % smoothening filter
 
 ecgsignal = ecgsignal - mean (ecgsignal); % cancel DC conponents
 
-% PAN J., and TOMPKINS W. J. (1985): ëA Real-Time QRS Detection Algorithmî, IEEE Trans.Biomed. Eng., 32, pp. 230-236
+% PAN J., and TOMPKINS W. J. (1985): ‚ÄòA Real-Time QRS Detection Algorithm‚Äù, IEEE Trans.Biomed. Eng., 32, pp. 230-236
 % 5-15 Hz
 
 % Low Pass Filtering
